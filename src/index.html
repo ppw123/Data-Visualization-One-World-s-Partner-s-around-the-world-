@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>One World Shelter</title>
+
+  <link href="css/style.css" rel="stylesheet">
+    <script src="js/d3.v3.min.js"></script>
+    <script src="http://d3js.org/queue.v1.min.js"></script>
+    <script src="js/vis.js"></script>
+
+</head>
+<body>
+  <div id="vis_container"></div>
+
+<script>
+  queue()
+        .defer(d3.json, "data/world.json")
+        .defer(d3.csv, "data/DemographicDistribution.csv")
+        .defer(d3.csv, "data/sheet2.csv")
+        .await(createVis);
+</script>
+
+
+</body>
+</html>
